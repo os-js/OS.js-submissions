@@ -1,0 +1,156 @@
+.gldp-default {
+	position: absolute;
+	font-family: Open Sans;
+}
+select {
+	font-family: Open Sans;
+}
+body {	background: #F1F1F1;}
+/* Core style for every cell */
+.gldp-default .core {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	position: relative;
+	float: left;
+	padding: 0;
+	margin: 0;
+	font-size: 14px;
+	text-align: center;
+	cursor: pointer;
+	color: #222;
+	background: #F1F1F1;
+}
+
+/* Cell border */
+.gldp-default .border {
+	border-style: solid;
+	border-width: 0;
+	border-color: #ebebeb;
+}
+
+/* Month/Year text and select */
+.gldp-default .monyear,
+.gldp-default .monyear select {
+	font-size: 16px !important;
+	color: #333333;
+}
+
+/* Month/Year text */
+.gldp-default .monyear span {
+	margin: 0 5px 0 5px;
+}
+
+/* Prev/Next arrows */
+.gldp-default .prev-arrow,
+.gldp-default .next-arrow,
+.gldp-default .prev-arrow-off,
+.gldp-default .next-arrow-off {
+	font-size:0;
+	line-height: 0;
+	text-indent: -999px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 10px;
+	height: 15px;
+	width: 15px;
+	display: inline-block;
+	margin-top:-4px;
+	vertical-align: middle;
+}
+.gldp-default .prev-arrow,
+.gldp-default .prev-arrow-off {
+	background-image:url(previous.png);
+}
+.gldp-default .next-arrow,
+.gldp-default .next-arrow-off {
+	background-image:url(next.png);
+}
+.gldp-default .prev-arrow:hover,
+.gldp-default .next-arrow:hover {
+	text-decoration: none;
+	
+	-webkit-transition: border-color .20s;
+	-moz-transition: border-color .20s;
+	-o-transition: border-color .20s;
+	transition: border-color .20s;
+}
+
+.gldp-default .prev-arrow:active,
+.gldp-default .next-arrow:active {
+	color: #f00;
+}
+
+.gldp-default .prev-arrow-off,
+.gldp-default .next-arrow-off {
+	color: #222;
+	opacity: 0.15;
+}
+
+/* Days of the week */
+.gldp-default .dow {
+	color: #fff;
+	cursor: default;
+	background: #dc4b3a;
+	border: none;
+	}
+
+/* Weekdays */
+.gldp-default .mon,
+.gldp-default .tue,
+.gldp-default .wed,
+.gldp-default .thu,
+.gldp-default .fri {
+	color: #333333;
+}
+
+/* Weekend days */
+.gldp-default .sat,
+.gldp-default .sun {
+	color: #3858a8;
+}
+
+/* Selectable days that are outside of current month being shown */
+.gldp-default .outday {
+	color: #666 !important;
+}
+
+/* Hover */
+.gldp-default .mon:hover,
+.gldp-default .tue:hover,
+.gldp-default .wed:hover,
+.gldp-default .thu:hover,
+.gldp-default .fri:hover,
+.gldp-default .sat:hover,
+.gldp-default .sun:hover {
+	background: #fcfff4;
+}
+
+/* Non-Selectable days */
+.gldp-default .noday {
+	color: #444;
+	font-weight: normal;
+	background: #aaaaaa;
+}
+
+/* Currently selected day */
+.gldp-default .selected {
+	color: #fff;
+	font-weight: 550;
+	background: #7bd148;
+	
+}
+
+/* Today */
+.gldp-default .today {
+	color: #fff;
+	font-weight: 550;
+	background: #dc4b3a;
+}
+
+/* Special */
+.gldp-default .special {
+	color: #fff;
+	font-weight: bold;
+	background: #4b8bf5;
+	}

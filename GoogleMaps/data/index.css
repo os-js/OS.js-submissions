@@ -1,0 +1,310 @@
+#mapsPage .pac-container {
+    font-family: arial, sans-serif;
+}
+#mapsPage .pac-icon {
+    background-image: url("http://maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons.png");
+}
+#mapsPage .content {
+    background-color: transparent !important;
+}
+#mapsPage:not(.on):not(body) {
+    display: flex;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    visibility: hidden;
+}
+
+/* page header */
+#mapsPage .page-header {
+    background: transparent;
+    border-bottom-color: transparent;
+    z-index: 9999999999 !important;
+}
+#mapsPage .page-header .searchbox-input, #mapsPage .page-header .searchbox-button {
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+    border-color: transparent;
+}
+#mapsPage .page-header .searchbox-input {
+    position:relative;
+    z-index: 1;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+#mapsPage .page-header .searchbox-input:focus {
+    border-color: #4285f4;
+}
+.pac-container {
+    width: 292px !important;
+    border-top: 0px !important;
+}
+
+/* minimap */
+#mapsPage .minimap {
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+    height: 48px;
+    width: 48px;
+    overflow: hidden;
+    border: 2px solid white;
+    background: #e5e5e5;
+    margin: 8px;
+    left: 0px !important;
+    z-index: 1000000 !important;
+    cursor: pointer;
+    background: #446344;
+    -webkit-user-select: none;
+    background-image: url("earth-48.png");
+    transition: background 5s;
+    background-size: 48px;
+}
+@media (min-resolution: 2dppx) {
+    #mapsPage .minimap {
+        background-image: url("earth-96.png");
+    }
+}
+#mapsPage .minimap[data-map-type="HYBRID"]::before {
+    opacity: 1;
+}
+#mapsPage .minimap[data-map-type="HYBRID"]::after {
+    content:"Map";
+}
+#mapsPage .minimap::after {
+    content:"Earth";
+    cursor: pointer;
+    color: white;
+    font-size: 11px;
+    position: absolute;
+    line-height: normal;
+    padding: 1px 0px 3px 0px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.42));
+    text-indent: 6px;
+    height: 15px;
+    text-shadow: rgba(0, 0, 0, 0.7) 0px 1px 8px;
+}
+#mapsPage .minimap::before {
+    content:"";
+    background-image:url("map-48.png");
+    background-size: 48px;
+    height: 48px;
+    width: 48px;
+    display: block;
+    opacity: 0;
+    transition: opacity .1s;
+}
+@media (min-resolution: 2dppx) {
+    #mapsPage .minimap::before {
+        background-image:url("map-96.png");
+    }
+}
+#mapsPage .minimap>div {
+    -webkit-transform: scale(.13) translateX(-190px) translateY(-48px);
+    transform: scale(.13) translateX(-190px) translateY(-48px);
+}
+
+/* sidenav */
+#mapsPage .sidenav {
+    height: 240px;
+}
+#mapsPage .sidenav.on {
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+}
+#mapsPage .sidenav::before {
+    display: none;
+}
+
+/* infowindows */
+#mapsPage .content .infowindow>div:first-child>div:first-child, #mapsPage .content div[style*="cursor: default;"]>div:first-child>div:first-child {
+    display: none !important;
+}
+#mapsPage .content .infowindow>div:first-child>div:last-child, #mapsPage .content div[style*="cursor: default;"]>div:first-child>div:last-child {
+    display: none !important;
+}
+#mapsPage .content .infowindow>div[class*="gm-style-"], #mapsPage .content div[style*="cursor: default;"]>div[class*="gm-style-"] {
+    position: fixed !important;
+    top: 35px !important;
+    background: white;
+    left: 48px !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    padding: 8px;
+    border-radius: 2px;
+    margin-top: 8px;
+    width: 276px !important;
+    -webkit-user-select: none !important;
+    user-select: none !important;
+}
+#mapsPage .content .infowindow>div[class*="gm-style-"]>div, #mapsPage .content div[style*="cursor: default;"]>div[class*="gm-style-"]>div {
+    width: -webkit-calc(100% - 13px) !important;
+    width: calc(100% - 13px) !important;
+}
+#mapsPage .content .infowindow>div:first-child>div:not(:first-child), #mapsPage .content div[style*="cursor: default;"]>div:first-child>div:not(:first-child) {
+    display: none !important;
+}
+#mapsPage .content .infowindow>div:last-child, #mapsPage .content div[style*="cursor: default;"]>div:last-child {
+    position: fixed !important;
+    left: 323px !important;
+    top: 48px !important;
+}
+#mapsPage .content .infowindow {
+    pointer-events: none !important;
+    z-index: 0 !important;
+    text-decoration: none;
+    font-weight: 300;
+    color: #5B5B5B;
+    font-family: Roboto, Arial;
+    font-size: 12px;
+}
+#mapsPage .content div[style*="cursor: default;"] {
+    pointer-events: none !important;
+}
+#mapsPage .content .infowindow>div, #mapsPage .content div[style*="cursor: default;"]>div {
+    pointer-events: all !important;
+}
+#mapsPage .content .infowindow .gm-sv-label {
+    cursor: pointer;
+    position: absolute;
+    bottom: 6px;
+    color: #fff;
+    font-weight: 400;
+    text-shadow: rgba(0, 0, 0, 0.7) 0 1px 4px;
+    font-size: 12px;
+    left: 4px;
+}
+#mapsPage .content .infowindow .gm-wsv {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+#mapsPage .content .infowindow .gm-title {
+    font-weight: 400;
+    margin-bottom: 1px;
+    padding-right: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: 500;
+    font-size: 14px;
+    color: black;
+    font-family: Roboto, Arial;
+}
+#mapsPage .content .infowindow .gm-numeric-rev {
+    font-size: 16px;
+    color: #dd4b39;
+    font-weight: 400;
+    float: left;
+}
+#mapsPage .content .infowindow .gm-stars-b {
+    position: relative;
+    background-position: 0 0;
+    width: 65px;
+    top: 3px;
+    margin: 0 5px;
+    height: 13px;
+    font-size: 0;
+    background-image: url("https://maps.gstatic.com/mapfiles/api-3/images/review_stars.png");
+    background-repeat: no-repeat;
+    background-size: 65px 26px;
+    float: left;
+}
+@media (min-resolution: 2dppx) {
+    #mapsPage .content .infowindow .gm-stars-b, #mapsPage .content .infowindow .gm-stars-f {
+        background-image: url("https://maps.gstatic.com/mapfiles/api-3/images/review_stars_hdpi.png");
+    }
+}
+#mapsPage .content .infoWindow .gm-style-iw {
+    height: auto !important;
+}
+#mapsPage .content .infowindow .gm-stars-f {
+    height: 13px;
+    font-size: 0;
+    background-image: url("https://maps.gstatic.com/mapfiles/api-3/images/review_stars.png");
+    background-repeat: no-repeat;
+    background-size: 65px 26px;
+    float: left;
+    background-position: left -13px;
+}
+#mapsPage .content .infowindow .gm-website {
+    padding-top: 6px;
+}
+#mapsPage .content .infowindow .gm-basicinfo {
+    line-height: 18px;
+    padding-bottom: 12px;
+}
+#mapsPage .content .infowindow .gm-photos {
+    padding-bottom: 8px;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+#mapsPage .content .infowindow a:link, #mapsPage .content .infowindow a:visited {
+    color: #4272db;
+    text-decoration: none;
+}
+#mapsPage .directions-button {
+    cursor: pointer;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 4px;
+}
+#mapsPage .directions-button::before {
+    height: 21px;
+    width: 21px;
+    background-image: url("directions_hover-21.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+    content:"";
+    display: block;
+    opacity: .8;
+}
+@media (min-resolution:2dppx) {
+    #mapsPage .directions-button::before {
+        background-image: url("directions_hover-42.png");
+    }
+}
+#mapsPage .directions-button::after {
+    content:"Directions";
+    margin-top: 5px;
+    text-align: center;
+    color: #3a84df;
+    font-size: 12px;
+    font-weight: 400;
+    max-width: 55px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+#mapsPage .directions-button:hover::before {
+    opacity: 1;
+}
+#mapsPage .directions-button:hover {
+    text-decoration: underline;
+}
+#mapsPage .infowindow-container {
+    display: -webkit-flex;
+    display: flex;
+}
+#mapsPage .infowindow-container>div:first-child {
+    -webkit-flex: auto;
+    flex: auto;
+}
+#mapsPage .infowindow-container>div:last-child {
+    width: -webkit-fit-content;
+    -webkit-flex: none;
+    flex: none;
+}
+#mapsPage .view-on-maps {
+    font-family: Roboto, Arial;
+    font-size: 12px;
+    font-weight: 400;
+    display: block;
+    margin-top: 8px;
+}
+#mapsPage .infowindow .gm-style-iw div[style*="width: 300px"] {
+    width: auto !important;
+}

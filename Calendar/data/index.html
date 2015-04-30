@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calendar</title>
+	<link href="glDatePicker.default.css" rel="stylesheet" type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css3-buttons.css" type="text/css"  media="screen">
+	<script src="jquery.min.js"></script>
+	<script src="glDatePicker.min.js"></script>
+	<script>
+    $(document).ready(function()
+    {
+        $('input').glDatePicker();
+    });
+	</script>
+</head>
+<body>
+	<style>
+	body {
+		margin:0;
+		padding:0;
+		overflow:hidden;
+		user-select:none;
+		-o-user-select:none;
+		-ms-user-select:none;
+		-moz-user-select:none;
+		-khtml-user-select:none;
+		-webkit-user-select:none;
+	}
+	.gldp-default {
+		display: block !important;
+		position:static !important;
+		z-index: 1000;
+		width: 237px !important;
+		height:232px !important;
+		margin:0 auto;
+	}
+
+	.core.border {
+		width: 33.8571px !important;
+		height: 29.75px !important;
+		line-height: 29.75px !important;
+		border-width: 1px !important;
+		margin-left: -1px !important;
+		margin-top: -1px !important;
+		z-index: 1012 !important;
+	}
+	.core.border.monyear.title {
+		width: 165.286px !important;
+		height: 29.75px !important;
+		line-height: 29.75px !important;
+		border-top-width: 1px !important;
+		margin-left: -1px !important;
+	}
+	#calendar {
+		width:225px;
+		display: none;
+	}
+
+	</style>
+	<input type="text" id="calendar" />
+</body>
+</html>
