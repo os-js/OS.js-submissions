@@ -8,7 +8,7 @@
    * Main Window Constructor
    */
   var ApplicationCalendarWindow = function(app, metadata) {
-    Window.apply(this, ['Calendar', {
+    Window.apply(this, ['ApplicationCalendarWindow', {
       icon: metadata.icon,
       title: metadata.name,
       width: 230,

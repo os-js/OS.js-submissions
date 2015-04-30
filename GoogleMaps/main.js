@@ -8,7 +8,7 @@
    * Main Window Constructor
    */
   var ApplicationMapWindow = function(app, metadata) {
-    Window.apply(this, ['GoogleMap', {
+    Window.apply(this, ['ApplicationMapWindow', {
       icon: metadata.icon,
       title: metadata.name,
       width: 640,
