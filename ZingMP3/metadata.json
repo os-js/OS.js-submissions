@@ -1,0 +1,15 @@
+{
+  "className":  "ApplicationZMT",
+  "name":       "Zing MP3",
+  "category":   "multimedia",
+  "mime":       null,
+  "icon":       "./data/favicon.png",
+  "singular":   true,
+  "preload":    [
+    {"src": "main.js", "type": "javascript"},
+    {"src": "main.css", "type": "stylesheet"}
+  ]
+}
+
+
+
