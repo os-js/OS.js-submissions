@@ -1,0 +1,15 @@
+{
+  "className":  "ApplicationMR",
+  "name":       "Mario (DOS)",
+  "mime":       null,
+  "category":	"games",
+  "icon":       "./data/favicon.png",
+  "singular":   true,
+  "preload":    [
+    {"src": "main.js", "type": "javascript"},
+    {"src": "main.css", "type": "stylesheet"}
+  ]
+}
+
+
+

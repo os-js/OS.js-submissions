@@ -1,0 +1,15 @@
+{
+  "className":  "ApplicationCS",
+  "name":       "Celeste (PICO-8)",
+  "category":   "games",
+  "mime":       null,
+  "icon":       "./data/favicon.png",
+  "singular":   true,
+  "preload":    [
+    {"src": "main.js", "type": "javascript"},
+    {"src": "main.css", "type": "stylesheet"}
+  ]
+}
+
+
+
