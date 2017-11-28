@@ -1,8 +1,15 @@
-(function(Application, GUI, Dialogs, Utils, API, VFS) {
+const IFrameApplication = OSjs.require('helpers/iframe-application');
 
-  var ApplicationCalendar = function(args, metadata) {
-    Application.apply(this, ['ApplicationCalendar', args, metadata, {
+class ApplicationCalendar extends IFrameApplication {
+  constructor(args, metadata) {
+    super('ApplicationCalendar', args, metadata, {
       src: 'data/index.html',
+      focus: function(frame, win) {
+        win.postMessage('resume', window.location.href);
+      },
+      blur: function(frame, win) {
+        win.postMessage('pause', window.location.href);
+      },
       title: metadata.name,
       icon: metadata.icon,
       width: 230,
@@ -10,13 +17,8 @@
       allow_resize: false,
       allow_restore: false,
       allow_maximize: false
-    }]);
-  };
+    });
+  }
+}
 
-  ApplicationCalendar.prototype = Object.create(Application.prototype);
-
-  OSjs.Applications = OSjs.Applications || {};
-  OSjs.Applications.ApplicationCalendar = OSjs.Applications.ApplicationCalendar || {};
-  OSjs.Applications.ApplicationCalendar.Class = ApplicationCalendar;
-
-})(OSjs.Helpers.IFrameApplication, OSjs.GUI, OSjs.Dialogs, OSjs.Utils, OSjs.API, OSjs.VFS);
+OSjs.Applications.ApplicationCalendar = ApplicationCalendar;
