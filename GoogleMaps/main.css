@@ -1,13 +1,13 @@
-.Window_GoogleMap .WindowWrapper {
+.Window_ApplicationMapWindow .WindowWrapper {
 }
 
-.Window_GoogleMap .WindowWrapper > .MapIframe {
+.Window_ApplicationMapWindow .WindowWrapper > .MapIframe {
   width : 100%;
   height : 100%;
   background : #000;
   color : #fff;
 }
-.Window_GoogleMap .WindowWrapper > .MapIframe > iframe {
+.Window_ApplicationMapWindow .WindowWrapper > .MapIframe > iframe {
   width : 100%;
   height : 100%;
   border : 0;

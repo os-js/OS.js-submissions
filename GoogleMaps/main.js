@@ -1,22 +1,24 @@
-(function(Application, GUI, Dialogs, Utils, API, VFS) {
+const IFrameApplication = OSjs.require('helpers/iframe-application');
 
-  var ApplicationMap = function(args, metadata) {
-    Application.apply(this, ['ApplicationMap', args, metadata, {
+class ApplicationMap extends IFrameApplication {
+  constructor(args, metadata) {
+    super('ApplicationMap', args, metadata, {
       src: 'data/index.html',
+      focus: function(frame, win) {
+        win.postMessage('resume', window.location.href);
+      },
+      blur: function(frame, win) {
+        win.postMessage('pause', window.location.href);
+      },
       title: metadata.name,
       icon: metadata.icon,
       width: 640,
       height: 400,
-      allow_resize: false,
-      allow_restore: false,
-      allow_maximize: false
-    }]);
-  };
+      allow_resize: true,
+      allow_restore: true,
+      allow_maximize: true
+    });
+  }
+}
 
-  ApplicationMap.prototype = Object.create(Application.prototype);
-
-  OSjs.Applications = OSjs.Applications || {};
-  OSjs.Applications.ApplicationMap = OSjs.Applications.ApplicationMap || {};
-  OSjs.Applications.ApplicationMap.Class = ApplicationMap;
-
-})(OSjs.Helpers.IFrameApplication, OSjs.GUI, OSjs.Dialogs, OSjs.Utils, OSjs.API, OSjs.VFS);
+OSjs.Applications.ApplicationMap = ApplicationMap;

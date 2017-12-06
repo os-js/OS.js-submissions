@@ -1,10 +1,14 @@
 {
-  "className":  "ApplicationCalendar",
-  "name":       "Calendar",
-  "mime":       null,
-  "icon":       "./data/favicon.png",
-  "singular":   true,
-  "preload":    [
+  "className": "ApplicationCalendar",
+  "name": "Calendar",
+  "category": "utilities",
+  "mime": null,
+  "icon": "./data/favicon.png",
+  "singular": true,
+  "build": {
+    "copy": ["data"]
+  },
+  "preload": [
     {"src": "main.js", "type": "javascript"},
     {"src": "main.css", "type": "stylesheet"}
   ]

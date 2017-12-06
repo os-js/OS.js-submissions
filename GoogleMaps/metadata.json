@@ -1,10 +1,14 @@
 {
-  "className":  "ApplicationMap",
-  "name":       "Google Maps",
-  "mime":       null,
-  "icon":       "./data/favicon.png",
-  "singular":   true,
-  "preload":    [
+  "className": "ApplicationMap",
+  "name": "Google Maps",
+  "category": "utilities",
+  "mime": null,
+  "icon": "./data/favicon.png",
+  "singular": true,
+  "build": {
+    "copy": ["data"]
+  },
+  "preload": [
     {"src": "main.js", "type": "javascript"},
     {"src": "main.css", "type": "stylesheet"}
   ]
